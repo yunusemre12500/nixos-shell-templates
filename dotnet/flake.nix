@@ -15,14 +15,6 @@
             dotnet-sdk
             nuget
           ];
-
-          shellHook = "export PATH=~/.cargo/bin:$PATH";
-
-          CC = "clang";
-          CXX = "clang++";
-
-          RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-          RUSTC_WRAPPER = "sccache";
         };
       });
 }
