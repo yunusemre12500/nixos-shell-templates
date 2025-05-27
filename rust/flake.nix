@@ -23,8 +23,8 @@
 
           shellHook = "export PATH=~/.cargo/bin:$PATH";
 
-          CC = "clang";
-          CXX = "clang++";
+          CC = "${pkgs.clang}/bin/clang";
+          CXX = "${pkgs.clang}/bin/clang++";
 
           RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
           RUSTC_WRAPPER = "sccache";
