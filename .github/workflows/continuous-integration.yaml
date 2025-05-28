@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   pull_request:
     paths:
-      - **/*.nix
+      - "**/*.nix"
     types:
       - opened
       - synchronize
@@ -11,7 +11,7 @@ on:
     branches:
       - main
     paths:
-      - **/*.nix
+      - "**/*.nix"
 
 jobs:
   check-code-style:
