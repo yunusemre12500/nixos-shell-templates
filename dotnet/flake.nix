@@ -6,10 +6,14 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=25.05";
   };
 
-  outputs = { flake-utils, nixpkgs, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = import nixpkgs { inherit system; };
-      in {
+  outputs =
+    { flake-utils, nixpkgs, ... }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             dotnet-sdk
@@ -20,5 +24,6 @@
             echo ".NET SDK: $(dotnet --version)"
           '';
         };
-      });
+      }
+    );
 }
