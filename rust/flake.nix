@@ -23,6 +23,7 @@
             # pkg-config
             rustc
             rustfmt
+            sccache
           ];
 
           shellHook = ''
@@ -32,13 +33,14 @@
             cargo-clippy --version
             rustc --version
             rustfmt --version
+            sccache --version
           '';
 
           CC = "${pkgs.clang}/bin/clang";
           CXX = "${pkgs.clang}/bin/clang++";
 
           RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-          RUSTC_WRAPPER = "sccache";
+          RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
         };
       }
     );
