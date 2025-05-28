@@ -17,12 +17,14 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             go
+
+            # for gRPC services
             # protobuf
+            # protoc-gen-go
+            # protoc-gen-go-grpc
           ];
 
           shellHook = ''
-            export PATH=~/go/bin:$PATH
-
             go version
           '';
         };
