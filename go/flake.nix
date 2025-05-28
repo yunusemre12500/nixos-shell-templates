@@ -16,7 +16,11 @@
             # protobuf
           ];
 
-          shellHook = "export PATH=~/go/bin:$PATH";
+          shellHook = ''
+            export PATH=~/go/bin:$PATH
+
+            go version
+          '';
         };
       });
 }

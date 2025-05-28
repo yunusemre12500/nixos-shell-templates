@@ -15,6 +15,10 @@
             dotnet-sdk
             nuget
           ];
+
+          shellHook = ''
+            echo ".NET SDK: $(dotnet --version)"
+          '';
         };
       });
 }

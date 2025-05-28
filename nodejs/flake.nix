@@ -15,6 +15,11 @@
             nodejs
             pnpm
           ];
+
+          shellHook = ''
+            echo "Node.js: $(node --version)"
+            echo "PNPM: $(pnpm --version)"
+          '';
         };
       });
 }

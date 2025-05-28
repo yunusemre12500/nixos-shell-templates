@@ -21,7 +21,14 @@
             rustfmt
           ];
 
-          shellHook = "export PATH=~/.cargo/bin:$PATH";
+          shellHook = ''
+            export PATH=~/.cargo/bin:$PATH
+            
+            cargo --version
+            cargo-clippy --version
+            rustc --version
+            rustfmt --version
+          '';
 
           CC = "${pkgs.clang}/bin/clang";
           CXX = "${pkgs.clang}/bin/clang++";
