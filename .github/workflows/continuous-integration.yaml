@@ -12,6 +12,7 @@ on:
       - main
     paths:
       - "**/*.nix"
+  workflow_dispatch:
 
 jobs:
   check-code-style:
