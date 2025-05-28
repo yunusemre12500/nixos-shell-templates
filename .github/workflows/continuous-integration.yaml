@@ -33,5 +33,5 @@ jobs:
       - name: Install nixfmt-rfc-style Package
         run: nix-shell -p nixfmt-rfc-style
 
-      - name: Run nixfmt
-        run: nixfmt --check **/*.nix
+      - name: Install and Run nixfmt
+        run: nix-shell -p nixfmt-rfc-style --run 'nixfmt --check **/*.nix'
