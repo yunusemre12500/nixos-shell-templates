@@ -27,8 +27,6 @@
           ];
 
           shellHook = ''
-            export PATH=~/.cargo/bin:$PATH
-
             cargo --version
             cargo-clippy --version
             rustc --version
